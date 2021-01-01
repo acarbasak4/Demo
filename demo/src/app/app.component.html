@@ -1,2 +1,10 @@
 <app-header></app-header>
+<ul *ngIf="todos.length > 0; else noTodos" >
+  <li *ngFor ="let todo of todos" >{{ todo }}</li>
+</ul>
+<ng-template #noTodos>
+  There is no to do.
+</ng-template>
+
+
 <app-footer></app-footer>
