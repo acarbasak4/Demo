@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TestService } from '../test.service';
 
 @Component({
   selector: 'app-footer',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
+  callCenter: string | undefined;
 
-  constructor() { }
+  constructor(private testService:TestService) { }
 
   ngOnInit(): void {
+    this.callCenter = this.testService.callCenter;
   }
 
 }
